@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Direction A — Warm-Organic + Trust · Gunkler Mein Bad</title>
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<style>
+  :root {
+    --color-bg: #F8F3EB;
+    --color-surface: #F1E9DA;
+    --color-surface-2: #E8DCC4;
+    --color-border: #D9C9A9;
+    --color-text: #2A2018;
+    --color-text-muted: #5A4A38;
+    --color-accent: #B85C2A;
+    --color-accent-hover: #9B4A1F;
+    --display: 'Fraunces', Georgia, serif;
+    --body: 'Inter', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.13 0 0 0 0 0.09 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 28px 6vw; border-bottom: 1px solid var(--color-border);
+  }
+  .wordmark { font-family: var(--display); font-weight: 600; font-size: 1.4rem; letter-spacing: -0.02em; }
+  .wordmark em { font-style: italic; color: var(--color-accent); font-weight: 600; }
+  nav ul { display: flex; gap: 36px; list-style: none; }
+  nav a {
+    color: var(--color-text-muted); text-decoration: none; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500;
+    transition: color 180ms ease-out;
+  }
+  nav a:hover { color: var(--color-accent); }
+  .hero {
+    display: grid; grid-template-columns: 60% 38%; gap: 2%;
+    padding: 80px 6vw 120px; align-items: center;
+    max-width: 1480px; margin: 0 auto;
+  }
+  .hero-text { padding-right: 24px; }
+  .eyebrow {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--color-text-muted); margin-bottom: 28px; font-weight: 500;
+  }
+  h1 {
+    font-family: var(--display); font-weight: 600; font-size: clamp(2.75rem, 6vw, 4.75rem);
+    line-height: 0.98; letter-spacing: -0.025em; margin-bottom: 28px;
+    font-variation-settings: "opsz" 144;
+  }
+  h1 em { font-style: italic; color: var(--color-accent); font-weight: 600; }
+  .subhead {
+    font-size: 1.15rem; color: var(--color-text-muted); max-width: 52ch;
+    line-height: 1.55; margin-bottom: 40px;
+  }
+  .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 28px; border-radius: 2px; font-size: 0.95rem; font-weight: 500;
+    cursor: pointer; text-decoration: none; transition: background 180ms ease-out, color 180ms ease-out, transform 180ms ease-out;
+    font-family: var(--body); border: 1px solid transparent;
+  }
+  .cta-primary { background: var(--color-accent); color: var(--color-bg); }
+  .cta-primary:hover { background: var(--color-accent-hover); transform: translateY(-1px); }
+  .cta-primary:focus-visible { outline: 2px solid var(--color-text); outline-offset: 3px; }
+  .cta-secondary { color: var(--color-accent); border-color: var(--color-accent); background: transparent; }
+  .cta-secondary:hover { background: var(--color-accent); color: var(--color-bg); }
+  .hero-photo {
+    position: relative; aspect-ratio: 4/5; overflow: hidden;
+    box-shadow: 0 30px 50px -20px rgba(184, 92, 42, 0.18), 0 8px 18px -10px rgba(42, 32, 24, 0.15);
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-caption {
+    position: absolute; bottom: 16px; left: 16px;
+    background: var(--color-bg); padding: 8px 14px;
+    font-size: 0.75rem; color: var(--color-text-muted);
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .footer-strip {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 32px 6vw; border-top: 1px solid var(--color-border);
+    font-size: 0.8rem; color: var(--color-text-muted);
+  }
+  .footer-strip .demo {
+    background: var(--color-surface-2); padding: 6px 12px; font-weight: 500;
+    color: var(--color-text); border-radius: 2px;
+  }
+  @media (max-width: 880px) {
+    .hero { grid-template-columns: 1fr; padding: 60px 6vw 80px; }
+    .hero-text { padding-right: 0; margin-bottom: 40px; }
+    nav { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">Gunkler · <em>Mein Bad</em></div>
+  <nav>
+    <ul>
+      <li><a href="#">Startseite</a></li>
+      <li><a href="#">Leistungen</a></li>
+      <li><a href="#">Referenzen</a></li>
+      <li><a href="#">Über uns</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Mein Bad · Niederaula-Hattenbach · Seit über 30 Jahren</p>
+    <h1>Bei uns ist Ihr Bad <em>Chefsache</em>, keine Glückssache.</h1>
+    <p class="subhead">Komplette Badrenovierung aus einer Hand — von der Vermessung über die Gestaltung bis zum letzten Fugenstrich. Kostenlose persönliche Beratung in unserem Showroom oder bei Ihnen vor Ort.</p>
+    <div class="ctas">
+      <a href="tel:06625919119" class="cta cta-primary">Beratungstermin vereinbaren</a>
+      <a href="#whatsapp-platzhalter" class="cta cta-secondary">Foto via WhatsApp senden</a>
+    </div>
+  </div>
+
+  <figure class="hero-photo">
+    <img src="https://placehold.co/720x900/E8DCC4/2A2018?text=Showroom-Detail%0AMaterialaufnahme" alt="Detail Showroom Gunkler — Materialaufnahme (Platzhalter)">
+    <figcaption class="photo-caption">Showroom · Niederaula</figcaption>
+  </figure>
+</main>
+
+<div class="footer-strip">
+  <span>© 2026 Jacob Digital · Peter Jacob — Konzeptstudie für Karl-Heinz Gunkler</span>
+  <span class="demo">Demo · Nicht öffentlich indexiert</span>
+</div>
+
+</body>
+</html>

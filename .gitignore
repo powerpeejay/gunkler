@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+node_modules/
+.cache/
+.parcel-cache/
+screenshots/
+*.log
+.env
+.env.local
+# polish-wave audit artifacts (regenerable)
+lighthouse-*.json

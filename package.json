@@ -1,0 +1,15 @@
+{
+  "name": "gunkler-site",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "serve": "node serve.mjs",
+    "shoot": "node screenshot.mjs",
+    "shoot:all": "node screenshot.mjs --viewport=all",
+    "shoot:mobile": "node screenshot.mjs --viewport=mobile",
+    "shoot:full": "node screenshot.mjs --full-page",
+    "shoot:dark": "node screenshot.mjs --dark",
+    "shoot:rm": "node screenshot.mjs --reduced-motion"
+  }
+}

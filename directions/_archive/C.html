@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Direction C — Editorial-Magazine · Gunkler Mein Bad</title>
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<style>
+  :root {
+    --color-bg: #FAF7F2;
+    --color-surface: #FFFFFF;
+    --color-surface-2: #F1ECE3;
+    --color-border: #1A1815;
+    --color-text: #0D0B08;
+    --color-text-muted: #6E6660;
+    --color-accent: #A33D1B;
+    --color-accent-hover: #7C2C12;
+    --display: 'Instrument Serif', Georgia, serif;
+    --body: 'Newsreader', 'Times New Roman', serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--body);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 17px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.10 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 36px 6vw 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .wordmark {
+    font-family: var(--display); font-style: italic; font-weight: 400;
+    font-size: 1.6rem; letter-spacing: -0.01em;
+  }
+  nav ul { display: flex; gap: 36px; list-style: none; }
+  nav a {
+    color: var(--color-text); text-decoration: none;
+    font-family: var(--body); font-weight: 400; font-size: 0.95rem;
+    border-bottom: 1px solid transparent; padding-bottom: 2px;
+    transition: border-color 200ms ease-out;
+  }
+  nav a:hover { border-bottom-color: var(--color-text); }
+  .chapter-strip {
+    display: grid; grid-template-columns: repeat(12, 1fr);
+    padding: 56px 6vw 0;
+    max-width: 1480px; margin: 0 auto;
+  }
+  .chapter-mark {
+    grid-column: 2 / 6;
+    font-family: var(--body); font-weight: 500; font-size: 0.78rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--color-text-muted);
+    padding-bottom: 12px;
+    position: relative;
+  }
+  .chapter-mark::after {
+    content: ""; position: absolute; bottom: 0; left: 0;
+    width: 56px; height: 2px; background: var(--color-accent);
+  }
+  .chapter-mark .num {
+    color: var(--color-text); font-weight: 700;
+    margin-right: 16px; font-feature-settings: "tnum";
+  }
+  .pull-hero {
+    display: grid; grid-template-columns: repeat(12, 1fr);
+    padding: 80px 6vw 60px;
+    max-width: 1480px; margin: 0 auto;
+  }
+  .pull-quote {
+    grid-column: 2 / 12;
+    font-family: var(--display); font-style: italic; font-weight: 400;
+    font-size: clamp(2.5rem, 6vw, 5.25rem);
+    line-height: 1.0; letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+  .pull-quote .opener, .pull-quote .closer {
+    color: var(--color-accent); font-style: normal;
+  }
+  .photo-band { padding: 0 6vw; max-width: 1480px; margin: 0 auto 48px; }
+  .photo-frame { aspect-ratio: 16/7; overflow: hidden; background: var(--color-surface-2); }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-caption {
+    font-family: var(--display); font-style: italic; font-weight: 400;
+    font-size: 0.95rem; color: var(--color-text-muted);
+    margin-top: 12px; padding-bottom: 14px;
+    border-bottom: 1px solid var(--color-border);
+    display: flex; justify-content: space-between;
+  }
+  .photo-caption .placeholder { color: var(--color-accent); font-weight: 500; }
+  .body-band {
+    display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px;
+    padding: 32px 6vw 96px;
+    max-width: 1480px; margin: 0 auto;
+  }
+  .intro {
+    grid-column: 5 / 11;
+    font-family: var(--body); font-size: 1.15rem; line-height: 1.6;
+    color: var(--color-text);
+    font-variation-settings: "opsz" 18;
+  }
+  .intro::first-letter {
+    font-family: var(--display); font-weight: 400;
+    font-size: 5rem; line-height: 0.85;
+    float: left; padding: 8px 14px 0 0; color: var(--color-text);
+  }
+  .cta-row {
+    grid-column: 5 / 11;
+    margin-top: 40px;
+    display: flex; align-items: baseline; gap: 28px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 32px;
+  }
+  .cta {
+    font-family: var(--display); font-style: italic; font-weight: 400;
+    font-size: 1.5rem; color: var(--color-accent); text-decoration: none;
+    border-bottom: 1px solid var(--color-accent);
+    padding-bottom: 4px;
+    transition: color 180ms ease-out, border-color 180ms ease-out, transform 180ms ease-out;
+    display: inline-flex; gap: 10px; align-items: baseline;
+  }
+  .cta:hover { color: var(--color-accent-hover); border-color: var(--color-accent-hover); }
+  .cta:focus-visible { outline: 2px solid var(--color-text); outline-offset: 4px; }
+  .cta-secondary {
+    font-family: var(--body); font-style: normal; font-weight: 500; font-size: 0.95rem;
+    color: var(--color-text-muted); border: none;
+    text-decoration: underline; text-decoration-color: var(--color-text-muted);
+    text-underline-offset: 4px;
+  }
+  .cta-secondary:hover { color: var(--color-text); }
+  .footer-strip {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px 6vw; border-top: 1px solid var(--color-border);
+    font-family: var(--body); font-size: 0.85rem; color: var(--color-text-muted);
+  }
+  .footer-strip .demo {
+    font-family: var(--display); font-style: italic;
+    color: var(--color-accent);
+  }
+  @media (max-width: 880px) {
+    .pull-quote, .chapter-mark, .intro, .cta-row { grid-column: 1 / 13; }
+    .pull-quote { font-size: clamp(2.25rem, 8vw, 3.25rem); }
+    nav { display: none; }
+    .photo-frame { aspect-ratio: 4/3; }
+    .cta-row { flex-direction: column; gap: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">Gunkler · Mein Bad</div>
+  <nav>
+    <ul>
+      <li><a href="#">Reportagen</a></li>
+      <li><a href="#">Leistungen</a></li>
+      <li><a href="#">Altersgerecht</a></li>
+      <li><a href="#">Über uns</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="chapter-strip">
+  <div class="chapter-mark">
+    <span class="num">01</span>
+    Das Bad als Raum — Niederaula-Hattenbach
+  </div>
+</section>
+
+<section class="pull-hero">
+  <p class="pull-quote">
+    <span class="opener">„</span>Bei uns ist Ihr Bad Chefsache, keine Glückssache.<span class="closer">"</span>
+  </p>
+</section>
+
+<section class="photo-band">
+  <figure class="photo-frame">
+    <img src="https://placehold.co/1480x647/F1ECE3/0D0B08?text=Vorher-Nachher-Reportage%0A%E2%80%94+Platzhalter" alt="Vorher-Nachher-Reportage einer Komplettbadrenovierung (Platzhalter)">
+  </figure>
+  <figcaption class="photo-caption">
+    <span>Komplettrenovierung · Bad Hersfeld · 2024 · Karl-Heinz Gunkler</span>
+    <span class="placeholder">Platzhalter · echtes Foto folgt</span>
+  </figcaption>
+</section>
+
+<section class="body-band">
+  <p class="intro">Seit über 30 Jahren plant und baut Karl-Heinz Gunkler Bäder im hessischen Niederaula. Komplett aus einer Hand — von der ersten Vermessung über die Auswahl aus 70.000 Bad-Produkten bis zum letzten Fugenstrich. Jedes Bad ist ein eigener Raum, jede Renovierung eine eigene Geschichte. Diese Site sammelt sie.</p>
+
+  <div class="cta-row">
+    <a href="tel:06625919119" class="cta">Beratungstermin anfragen <span>→</span></a>
+    <a href="#whatsapp-platzhalter" class="cta cta-secondary">oder Foto via WhatsApp senden</a>
+  </div>
+</section>
+
+<div class="footer-strip">
+  <span>© 2026 Jacob Digital · Peter Jacob — Konzeptstudie für Karl-Heinz Gunkler</span>
+  <span class="demo">Demo · nicht öffentlich indexiert</span>
+</div>
+
+</body>
+</html>

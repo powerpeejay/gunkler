@@ -1,0 +1,7 @@
+# Demo-Mode build by Jacob Digital — site is a concept study, not for indexing.
+# When Karl-Heinz signs and goes live, change to "Allow: /" and add proper Sitemap line.
+
+User-agent: *
+Disallow: /
+
+# Sitemap intentionally not advertised during demo.
